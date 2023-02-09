@@ -1,0 +1,678 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Ubuntu';
+    src: url(../fonts/Ubuntu/Ubuntu-Medium.ttf);
+}
+
+@font-face {
+    font-family: 'Overpass';
+    src: url(../fonts/Overpass/static/Overpass-ExtraLight.ttf);
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #fafafa ;
+    font-family: sans-serif;
+    color: white;
+    overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+    width: 5px;               /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+    background-color: rgb(255, 255, 255);        /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: rgb(255, 77, 0);    /* color of the scroll thumb */
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+header#cabecalho {
+    width: 100%;
+    height: 70%;
+    min-height: 450px;
+    background: linear-gradient(100deg, rgba(255,128,109,1) 0%, rgba(240,116,98,1) 25%, rgba(255,89,96,1) 51%, rgba(255,88,96,1) 74%);
+    position: relative;
+    border-bottom-left-radius: 70px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#cabecalho #bgImg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-bottom-left-radius: 70px;
+    overflow: hidden;
+}
+
+#cabecalho #headerImg {
+    position: absolute;
+    height: 430%;
+    top: -150%;
+    right: -70%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+#cabecalho #logo {
+    margin-right: 50px;
+    display: grid;
+    place-items: center;
+}
+
+#logo img {
+    height: 30px;
+}
+
+#cabecalho #boxMenu {
+    display: flex;
+    width: 80%;
+    margin: 50px;
+    font-family: 'Ubuntu';
+    color: rgba(255, 255, 255, 0.878);
+}
+
+#menuIcon {
+    display: none;
+}
+
+li {
+    list-style: none;
+    width: 100px;
+}
+
+#options {
+    display: flex;
+    width: 40%;
+    z-index: 1;
+}
+
+#headerBox {
+    display: flex;
+    height: 40px;
+    width: 80%;
+    position: relative;
+}
+
+#options li{
+    width: 100%;
+    height: 40px;
+    cursor: pointer;
+}
+
+#options li p + ul li {
+    display: grid;
+    place-items: center;
+}
+
+#options li p + ul li {
+    background-color: salmon;
+}
+
+#options li > p {
+    display: flex;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+}
+
+#options li:hover > p {
+    background-color: salmon;
+}
+
+#options li p + ul {
+    display: none;
+}
+
+#options li:hover > ul {
+    display: block;
+}
+
+#options li p + ul li:hover {
+    background-color: rgb(231, 78, 61);
+}
+
+#options li p::after {
+    content: "";
+    background: url(../images/icon-arrow-light.svg);
+    width: 17px;
+    height: 12px;
+    background-size: cover;
+    margin-left: 5px;
+}
+
+#boxMenu #loginSignup {
+    width: 100%;
+    max-width: 205px;
+    position: absolute;
+    right: 0;
+}
+
+button{
+    padding: 5px 10px;
+    width: 100px;
+    border-radius: 20px;
+    border: 1px solid transparent;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+    height: 40px;
+}
+
+#loginSignup button:hover {
+    box-shadow: 0px 0px 5px rgba(98, 24, 24, 0.664);
+}
+
+#loginSignup button:nth-child(1) {
+    background: none;
+    color: white
+}
+
+#loginSignup button:nth-child(1):hover {
+    border-color: white;
+}
+
+#loginSignup button:nth-child(2) {
+    background-color: rgb(243, 243, 243);
+    color: #E15E63;
+}
+
+#loginSignup button:nth-child(2):hover {
+    border-color: rgb(243, 243, 243);
+    color: rgb(243, 243, 243);
+    background-color: #E15E63;
+}
+
+#mainDesc {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: absolute;
+    top: 40%;
+    text-align: center;
+}
+
+#mainDesc h1 {
+    font-family: 'Overpass';
+    font-size: 40px;
+    letter-spacing: 2px;
+    color: rgb(239, 239, 239)
+}
+
+#mainDesc p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.77);
+}
+
+#mainDesc #opt {
+    margin-top: 10px;
+}
+
+#mainDesc button {
+    width: 120px;
+    margin: 10px;
+}
+
+#mainDesc #opt button:nth-child(1) {
+    background-color: rgb(243, 243, 243);
+    color: #E15E63;
+}
+
+#mainDesc #opt button:nth-child(1):hover {
+    border-color: rgb(243, 243, 243);
+    color: rgb(243, 243, 243);
+    background-color: #E15E63;
+}
+
+#mainDesc #opt button:nth-child(2) {
+    background: none;
+    color: white;
+    border-color: white;
+}
+
+#mainDesc #opt button:nth-child(2):hover {
+    background-color: white;
+    color: #E15E63;
+}
+
+main > section {
+    color: #283D54;
+    display: grid;
+    place-items: center;
+}
+
+#section1 {
+    width: 100%;
+    height: auto;
+    position: relative;
+    margin: 120px 0 200px 0;
+    line-height: 25px;
+}
+
+#section1 > h2{
+    font-size: 30px;
+    margin-bottom: 70px
+}
+
+#boxSection1 {
+    display: flex;
+    gap: 50px;
+}
+
+#boxSection1 #textSection1 div{
+    margin: 30px;
+}
+
+#boxSection1 #textSection1 div p{
+    color: #283d54b3;
+}
+
+#boxSection1 #textSection1 div h3{
+    color: #283d54e1;
+}
+
+#boxSection1 > div:nth-child(2) {
+    width: 40%;
+    margin-left: 10%;
+    padding: 50px;
+}
+
+#textSection1 {
+    width: 58% !important;
+}
+
+#imageSection1 {
+    background: url(../images/illustration-editor-desktop.svg);
+    background-size: cover;
+    position: absolute;
+    width: 50vw;
+    max-width: 800px;
+    max-height: 800px;
+    height: 50vw;
+    right: -170px;
+    top: -10px;
+}
+
+#section2 {
+    width: 100%;
+    height: 370px;
+    position: relative;
+    background: rgb(47,48,68);
+    background: linear-gradient(100deg, rgba(47,48,68,1) 0%, rgba(54,58,85,1) 20%, rgba(69,71,94,1) 36%, rgba(67,68,98,1) 53%, rgba(72,75,106,1) 77%, rgba(53,55,80,1) 97%);
+    color: rgb(253, 253, 253);
+    padding: 140px;
+    display: flex;
+    border-top-right-radius: 70px;
+    border-bottom-left-radius: 70px;
+    line-height: 30px;
+    margin-bottom: 100px;
+    margin-top: 40px;
+    display: flex;
+    gap: 100px
+}
+
+#section2 h2 {
+    font-size: 35px;
+    margin-bottom: 30px;
+}
+
+#imageSection2 {
+    z-index: 1;
+    position: relative;
+}
+
+#imageSection2 img {
+    width: 100%;
+}
+
+#imageSection2 + div {
+    z-index: 1;
+    position: relative;
+    width: 40%;
+}
+
+#imageSection2 + div p {
+    color: rgba(255, 255, 255, 0.616);
+}
+
+#bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    border-top-right-radius: 70px;
+    border-bottom-left-radius: 70px;
+    overflow: hidden;
+    
+}
+
+#bg img {
+    position: absolute;
+    top: -590px;
+    left: -220px;
+}
+
+#section3 {
+    display: flex;
+    gap: 30px;
+}
+
+#section3 > div:nth-child(2) {
+    width: 80%;
+    max-width: 600px;
+    margin-left: -350px;
+}
+
+#section3 > div div {
+    margin: 20px;
+    line-height: 30px;
+}
+
+#section3  div div h3 {
+    font-size: 25px;
+}
+
+#section3  div div p {
+    color: rgba(0, 0, 0, 0.596);
+}
+
+#section3 #imageSection3 {
+    position: relative;
+    left: -300px;
+}
+
+#section3 #imageSection3 img {
+    width: 100%;
+}
+
+#footer {
+    background-color: #24242C;
+    color: rgba(255, 255, 255, 0.699);
+    display: flex;
+    justify-content: space-around;
+    border-top-right-radius: 70px;
+    position: relative;
+}
+
+#menuFooter{
+    display: flex;
+}
+
+#menuFooter ul {
+    position: relative;
+    right: 50px;
+    padding: 50px
+}
+
+#menuFooter ul li {
+    padding: 5px;
+    cursor: pointer;
+}
+
+#menuFooter ul li:hover {
+    transform: scale(1.05);
+    color: rgba(255, 255, 255, 0.911);
+}
+
+#menuFooter ul li:nth-child(1) {
+    margin-bottom: 20px;
+    color: white;
+}
+
+#logoFooter {
+    position: relative;
+    top: -70px;
+}
+
+@media (max-width: 780px) {
+
+    body {
+        text-align: center;
+    }
+
+    #loginSignup {
+        position: static !important;
+    }
+
+    #headerBox {
+        width: 90%;
+        max-width: 300px;
+        min-width: 260px;
+        display: flex;
+        flex-direction: column;
+        align-items: center !important;
+        background-color: #fff;
+        min-height: 500px;
+        z-index: 10;
+        position: absolute !important;
+        right: 10px;
+        top: 100px;
+        color: #283D54;
+        box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.705);
+        border-radius: 5px;
+        padding: 20px;
+    }
+
+    #headerBox #options{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #headerBox #options li {
+        height: auto !important;
+        width: 100%;
+    }
+
+    #headerBox #options > li {
+        border-bottom: 1px solid rgba(128, 128, 128, 0.151);
+    }
+
+    #options li p + ul {
+        background-color: #EFEFF1 !important;
+        font-size: 15px;
+        border-radius: 5px;
+    }
+
+    #options li p + ul li {
+        padding: 5px;
+    }
+
+    #options li p + ul li:hover {
+        background-color: #cccccc !important;
+    }
+
+    #options li:hover p{
+        background-color: #fff;
+    }
+
+    #options li:hover p + ul li {
+        background-color: #EFEFF1;
+    }
+
+    #options li p::after {
+        content: "";
+        background: url(../images/icon-arrow-dark.svg);
+        width: 15px;
+        height: 10px;
+        background-size: cover;
+        margin-left: 5px;
+    }
+
+    #headerBox #loginSignup {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        bottom: 20px !important;
+        width: 90%;
+        max-width: none;
+        gap: 20px;
+        border-top: 0.6px solid #08080821;
+        position: absolute !important;
+        padding-top: 30px;
+        left: 5%
+        
+    }
+    
+    #loginSignup button {
+        font-size: 15px;
+        width: 40% !important;
+        height: 45px;
+        border-radius: 30px;
+    }
+
+    #loginSignup button:nth-child(1) {
+        color: #283D54;
+    }
+
+    #loginSignup button:nth-child(2) {
+        color: white;
+        background: linear-gradient(81deg, rgba(254,135,111,1) 0%, rgba(244,69,86,1) 100%);
+    }
+
+    /*Show menu sidebar*/
+    #chkMenu:not(checked) ~ #headerBox{
+        display: none;
+    }
+
+    #chkMenu:not(checked) ~ label #menuIcon img:nth-child(1) {
+        display: block;
+    }
+
+    #chkMenu:not(checked) ~ label #menuIcon img:nth-child(2) {
+        display: none;
+    }
+
+    /*Hide menu sidebar*/
+    #chkMenu:checked ~ #headerBox{
+        display: block;
+    }
+
+    #chkMenu:checked ~ label #menuIcon img:nth-child(1) {
+        display: none;
+    }
+
+    #chkMenu:checked ~ label #menuIcon img:nth-child(2) {
+        display: block;
+    }
+
+    #menuIcon img {
+        position: absolute;
+    }
+
+    #chkMenu:checked + #menuIcon img:nth-child(1){
+        display: none;
+    }
+
+    #menuIcon {
+        display: block;
+        position: absolute;
+        right: 50px;
+    }
+
+    #section1 {
+        margin-bottom: 50px;
+    }
+    #boxSection1 {
+        flex-direction: column !important;
+        align-items: center;
+    }
+
+    #imageSection1 {
+        background: url(../images/illustration-editor-mobile.svg);
+        background-size: cover;
+        width: 70vw;
+        height: 60vw;
+        position: static;
+    }
+
+    #textSection1 {
+        width: 100% !important;
+        margin: 0 !important;
+        margin-bottom: 100px !important;
+        padding: 0 !important;
+        text-align: center;
+    }
+
+    #section2 {
+        height: auto !important;
+        display: flex;
+        flex-direction: column !important;
+        padding: 300px 0 100px 0 !important;
+    }
+
+    #imageSection2 {
+        position: absolute;
+        top: -210px;
+    }
+
+    #imageSection2 + div {
+        width: 80%;
+        margin-top: 50px;
+        position: static;
+    }
+
+    #bg {
+        top: 0;
+    }
+
+    #bg img {
+        top: -500px;
+    }
+
+    #section3 {
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    #section3 #imageSection3 {
+        position: static;
+    }
+
+    #section3 > div:nth-child(2) {
+        
+        margin-left: 0px;
+    }
+
+    #footer {
+        flex-direction: column;
+    }
+    
+    #menuFooter{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    #menuFooter ul {
+        right: 0;
+    }
+    
+    #logoFooter {
+        position: relative;
+        top: 20px;
+    }
+}
+
+@media (max-width:350px) {
+    header h1 {
+        font-size: 27px !important;
+    }
+}
