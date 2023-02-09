@@ -11,7 +11,7 @@
 
 Projeto construído utilizando os conceitos básicos de HTML5, CSS3 com fogo no flex-box.
 
-[Clique aqui para acessar a página](https://ericlamounier.github.io/Tic-Tac-Toe/)
+[Clique aqui para acessar a página](https://ericlamounier.github.io/Landing-Page-BLOGR/)
 
 ## Tecnologias
 
